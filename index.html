@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Optimize your energy usage and reduce your bills with our innovative Appliance Power Consumption App. Monitor your appliance energy consumption, identify energy-hogging appliances, and make informed decisions to save money and reduce your carbon footprint. Try our app today!" />
+        <meta name="author" content="Joey Rapista" />
+        <title>Appliance/s electricity consumption calculator</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/budget.png" />
+        <script src="js/script.js"></script>
+        <!-- Core theme CSS (includes Bootstrap)--> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a href="#"> <img class="img-fluid" src="assets/budget.png" alt="img" width="30px" height="auto"> </a>               
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Other Tools</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li> -->
+                                <!-- <li><hr class="dropdown-divider" /></li> -->
+                                <li><a class="dropdown-item" href="https://ph.linkedin.com/in/joey-rapista-b715311b4">About</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container" x-data="store()">
+            <div class="text-center mt-5">
+                <h1>Electricity consumption calculator</h1>
+                <p class="lead">Calculate your appliance/s electricity consumption with ease!</p> 
+            </div>
+              
+            <div class="d-flex justify-content-center align-items-top">
+                <div class="card"style="width: 30rem;">
+                <div class="card-body"> 
+               
+                    <div class="form-group mb-3">
+                        <label for="powerConsumption"> <strong>Power consumption(Watts)</strong> </label>
+                        <input x-model="powerConsumption" type="number" class="form-control" id="powerConsumption" placeholder="Enter power consumption in watts">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="hoursPerDay"> <strong>Hours use per day(Hrs)</strong> </label>
+                        <input x-model="hoursPerDay" type="number" class="form-control" id="hoursPerDay" placeholder="Enter number of hours use per day">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="kWhCost"> <strong>kWh cost(PHP)</strong> </label>
+                        <input x-model="kWhCost" type="number" class="form-control" id="kWhCost" placeholder="Enter kWh cost">
+                    </div> 
+                    <button @click="calculate()" class="btn btn-primary">Calculate</button>
+                    <button @click="reset()" class="btn btn-secondary">Reset</button> 
+               
+                </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center align-items-top mt-3">
+                <div class="card"style="width: 30rem;">
+                <div class="card-body text-center"> 
+                   <h5>Result</h5>
+                   <p><span>Daily:</span> <span>&#8369;</span><strong><span x-text="daily"></span></strong></p>
+                   <p><span>Montly:</span> <span>&#8369;</span><strong><span x-text="monthly"></span></strong></p> 
+                </div>
+                </div>
+            </div>
+                  
+           
+        </div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js"></script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+       
+    </body>
+</html>
+
+
+ 
