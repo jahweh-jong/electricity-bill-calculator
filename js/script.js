@@ -1,5 +1,4 @@
 function store(){
-
     return {
         powerConsumption:'',
         hoursPerDay:'',
